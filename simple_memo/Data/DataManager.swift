@@ -21,6 +21,22 @@ class DataManager {
     
     var memoList = [Memo]()
     
+    // filter 처리된것
+    var filteredArr: [Memo] = []
+    
+    func searchMemo() {
+        let request: NSFetchRequest<Memo> = Memo.fetchRequest()
+        
+        let sortByDateDesc = NSSortDescriptor(key: "insertDate", ascending: false)
+        request.sortDescriptors = [sortByDateDesc]
+        
+        do {
+            filteredArr = try mainContext.fetch(request)
+        } catch {
+            print(error)
+        }
+    }
+    
     func fetchMemo() {
         let request: NSFetchRequest<Memo> = Memo.fetchRequest()
         

@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="pdj-Wc-O73" detailTextLabel="RlD-72-ODD" style="IBUITableViewCellStyleSubtitle" id="25d-MZ-y8X">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -51,6 +52,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Simple Memo" id="aav-lz-bZb">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="x9c-ly-bz2">
+                            <connections>
+                                <action selector="editButton:" destination="xOZ-WU-sgb" id="bhT-Aj-JGd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="K5p-zg-HIh">
                             <connections>
                                 <segue destination="oTF-uk-DRW" kind="presentation" modalPresentationStyle="fullScreen" id="T7Y-Gb-Opr"/>
@@ -164,11 +170,11 @@
             <objects>
                 <viewController id="bYl-f2-QI4" customClass="ComposeViewController" customModule="simple_memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qK4-Nw-Al8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9c5-YU-TqO">
-                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -227,7 +233,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oTF-uk-DRW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zjO-fk-mW6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -241,7 +247,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cio-UQ-OFd"/>
+        <segue reference="T7Y-Gb-Opr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
