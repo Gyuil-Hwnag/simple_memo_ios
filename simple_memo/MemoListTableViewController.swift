@@ -206,7 +206,7 @@ extension MemoListTableViewController: UISearchResultsUpdating {
             $0.content!.localizedCaseInsensitiveContains(text)
         }
         self.tableView.reloadData()
-        dump(self.filteredMemo)
+//        dump(self.filteredMemo)
     }
 }
 
