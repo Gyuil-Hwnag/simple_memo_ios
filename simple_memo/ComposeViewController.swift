@@ -36,8 +36,6 @@ class ComposeViewController: UIViewController {
             NotificationCenter.default.post(name: ComposeViewController.newMomoDidInsert, object: nil)
         }
         
-        
-        
         dismiss(animated: true, completion: nil)
     }
     

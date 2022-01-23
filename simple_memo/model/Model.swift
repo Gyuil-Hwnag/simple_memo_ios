@@ -21,3 +21,14 @@ import Foundation
 //        Memo(content: "Dummy Date Second")
 //    ]
 //}
+
+
+//class Todo {
+//    var date: String
+//    var todo: String
+//    
+//    init(date: String, todo: String){
+//        self.todo = todo
+//        self.date = date
+//    }
+//}

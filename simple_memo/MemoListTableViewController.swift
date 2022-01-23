@@ -9,6 +9,7 @@ import UIKit
 
 class MemoListTableViewController: UITableViewController {
 
+    var date = ""
     // date format
     let formatter: DateFormatter = {
         let f = DateFormatter()
@@ -21,7 +22,6 @@ class MemoListTableViewController: UITableViewController {
     var token: NSObjectProtocol?
     
     var filteredMemo = [Memo]()
-    
     
     // observal 낭비 소멸자
     deinit{
@@ -96,7 +96,7 @@ class MemoListTableViewController: UITableViewController {
 //        searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchResultsUpdater = self
         self.navigationItem.searchController = searchController
-        self.navigationItem.title = "Search"
+        self.navigationItem.title = "Memo"
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 
@@ -111,8 +111,6 @@ class MemoListTableViewController: UITableViewController {
     // cell의 크기를 지정
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-
-        
         if self.isFiltering {
             return filteredMemo.count
           }
