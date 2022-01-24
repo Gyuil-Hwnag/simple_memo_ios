@@ -1,0 +1,6 @@
+framework module Pods_simple_memo_simple_memoUITests {
+  umbrella header "Pods-simple_memo-simple_memoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
