@@ -59,4 +59,33 @@ class TodoManager {
             }
         }
     }
+    
+    func fetchTodo() {
+        let request: NSFetchRequest<Todo> = Todo.fetchRequest()
+        
+        let sortByDateDesc = NSSortDescriptor(key: "todo", ascending: false)
+        request.sortDescriptors = [sortByDateDesc]
+        
+        do {
+            todoList = try mainContext.fetch(request)
+        } catch {
+            print(error)
+        }
+    }
+    
+    // filter 처리된것
+    var filteredTodo: [Todo] = []
+    
+    func searchTodo() {
+        let request: NSFetchRequest<Todo> = Todo.fetchRequest()
+        
+        let sortByDateDesc = NSSortDescriptor(key: "todo", ascending: false)
+        request.sortDescriptors = [sortByDateDesc]
+        
+        do {
+            filteredTodo = try mainContext.fetch(request)
+        } catch {
+            print(error)
+        }
+    }
 }

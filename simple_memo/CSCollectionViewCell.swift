@@ -7,8 +7,12 @@
 
 import UIKit
 
-// custom cell
-class CSCollectionViewCell : UICollectionViewCell {
+class CSCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var todo: UILabel!
+    @IBOutlet weak var date: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }

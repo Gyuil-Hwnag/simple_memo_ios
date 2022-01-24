@@ -3,9 +3,9 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -85,9 +85,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39H-79-uKM">
-                                <rect key="frame" x="0.0" y="44" width="424" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39H-79-uKM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="My Schedule" id="HcM-xW-Evb">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="PKD-7v-m0Q">
@@ -95,68 +94,88 @@
                                                 <action selector="dismissView:" destination="CMl-rO-skW" id="nnr-YN-ASQ"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JY0-Wx-cpb">
-                                            <connections>
-                                                <action selector="onClick:" destination="CMl-rO-skW" id="SCZ-ya-as3"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ss-kK-ppo" customClass="FSCalendar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ss-kK-ppo" customClass="FSCalendar">
                                 <rect key="frame" x="10" y="88" width="394" height="282"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="APa-og-Qrr"/>
+                                </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCV-1Z-XdH">
-                                <rect key="frame" x="10" y="420" width="394" height="442"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 할일은??" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Th-W6-M4c">
+                                <rect key="frame" x="10" y="375" width="329" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="zdd-Hk-bUP"/>
+                                </constraints>
+                                <color key="textColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UCV-1Z-XdH">
+                                <rect key="frame" x="10" y="414" width="394" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RDQ-Jz-AxO">
-                                    <size key="itemSize" width="394" height="42"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RDQ-Jz-AxO">
+                                    <size key="itemSize" width="346" height="54"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="O9C-PS-XDU" customClass="CSCollectionViewCell" customModule="simple_memo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="42"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="O9C-PS-XDU">
+                                        <rect key="frame" x="24" y="0.0" width="346" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0rn-Nh-lNs" customClass="CSCollectionViewCell" customModule="simple_memo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="42"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="346" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gr9-nb-V8U">
-                                                    <rect key="frame" x="10" y="10" width="374" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="gr9-nb-V8U" firstAttribute="top" secondItem="0rn-Nh-lNs" secondAttribute="top" constant="10" id="Bam-TA-WSD"/>
-                                                <constraint firstAttribute="bottom" secondItem="gr9-nb-V8U" secondAttribute="bottom" constant="10" id="Ycq-iw-A68"/>
-                                                <constraint firstAttribute="trailing" secondItem="gr9-nb-V8U" secondAttribute="trailing" constant="10" id="kKi-tb-Tna"/>
-                                                <constraint firstItem="gr9-nb-V8U" firstAttribute="leading" secondItem="0rn-Nh-lNs" secondAttribute="leading" constant="10" id="xMY-uo-IX4"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="394" height="42"/>
-                                        <connections>
-                                            <outlet property="todo" destination="gr9-nb-V8U" id="dCe-6y-E3f"/>
-                                        </connections>
+                                        </view>
+                                        <size key="customSize" width="346" height="54"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="할일을 입력하세요" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Th-W6-M4c">
-                                <rect key="frame" x="10" y="378" width="394" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpj-uQ-jyO">
+                                <rect key="frame" x="344" y="375" width="60" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="muH-he-a5w"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="ADD"/>
+                                <connections>
+                                    <action selector="onClick:" destination="CMl-rO-skW" eventType="touchUpInside" id="N4B-Ui-vSL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GNR-Wm-gI8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Th-W6-M4c" firstAttribute="leading" secondItem="GNR-Wm-gI8" secondAttribute="leading" constant="10" id="5Ap-zd-9b6"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="bottom" secondItem="GNR-Wm-gI8" secondAttribute="bottom" id="5CO-MK-Ghb"/>
+                            <constraint firstItem="8Th-W6-M4c" firstAttribute="top" secondItem="0ss-kK-ppo" secondAttribute="bottom" constant="5" id="9EB-qr-mrV"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="top" secondItem="qpj-uQ-jyO" secondAttribute="bottom" constant="5" id="HBV-KK-SFZ"/>
+                            <constraint firstItem="39H-79-uKM" firstAttribute="leading" secondItem="GNR-Wm-gI8" secondAttribute="leading" id="P8z-i2-6eL"/>
+                            <constraint firstItem="GNR-Wm-gI8" firstAttribute="trailing" secondItem="0ss-kK-ppo" secondAttribute="trailing" constant="10" id="PCR-Ki-4Cm"/>
+                            <constraint firstItem="GNR-Wm-gI8" firstAttribute="trailing" secondItem="qpj-uQ-jyO" secondAttribute="trailing" constant="10" id="PLf-kO-UwH"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="top" secondItem="qpj-uQ-jyO" secondAttribute="bottom" constant="5" id="THr-rY-aba"/>
+                            <constraint firstItem="0ss-kK-ppo" firstAttribute="top" secondItem="39H-79-uKM" secondAttribute="bottom" id="Ttd-ez-X3A"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="top" secondItem="8Th-W6-M4c" secondAttribute="bottom" constant="5" id="Xk5-Ep-b4j"/>
+                            <constraint firstItem="0ss-kK-ppo" firstAttribute="leading" secondItem="GNR-Wm-gI8" secondAttribute="leading" constant="10" id="Y3L-qY-WwI"/>
+                            <constraint firstItem="qpj-uQ-jyO" firstAttribute="leading" secondItem="8Th-W6-M4c" secondAttribute="trailing" constant="5" id="Zcn-iH-BNi"/>
+                            <constraint firstItem="GNR-Wm-gI8" firstAttribute="trailing" secondItem="UCV-1Z-XdH" secondAttribute="trailing" constant="10" id="b8f-j9-rl5"/>
+                            <constraint firstItem="GNR-Wm-gI8" firstAttribute="trailing" secondItem="qpj-uQ-jyO" secondAttribute="trailing" constant="10" id="cyI-uP-h3V"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="top" secondItem="8Th-W6-M4c" secondAttribute="bottom" constant="5" id="dtE-kW-0Eu"/>
+                            <constraint firstItem="qpj-uQ-jyO" firstAttribute="leading" secondItem="8Th-W6-M4c" secondAttribute="trailing" constant="5" id="fxX-ps-WId"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="top" secondItem="8Th-W6-M4c" secondAttribute="bottom" constant="5" id="kCP-Lf-bdi"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="leading" secondItem="GNR-Wm-gI8" secondAttribute="leading" constant="10" id="nke-B3-jD7"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="top" secondItem="qpj-uQ-jyO" secondAttribute="bottom" constant="5" id="npO-be-uYK"/>
+                            <constraint firstItem="UCV-1Z-XdH" firstAttribute="top" secondItem="8Th-W6-M4c" secondAttribute="bottom" constant="5" id="pNc-FT-UGd"/>
+                            <constraint firstItem="qpj-uQ-jyO" firstAttribute="top" secondItem="0ss-kK-ppo" secondAttribute="bottom" constant="5" id="sHe-gv-1Ve"/>
+                            <constraint firstItem="8Th-W6-M4c" firstAttribute="top" secondItem="0ss-kK-ppo" secondAttribute="bottom" constant="5" id="sL5-Zx-wum"/>
+                            <constraint firstItem="39H-79-uKM" firstAttribute="top" secondItem="GNR-Wm-gI8" secondAttribute="top" id="sk1-n2-vMt"/>
+                            <constraint firstItem="GNR-Wm-gI8" firstAttribute="trailing" secondItem="qpj-uQ-jyO" secondAttribute="trailing" constant="10" id="yDL-Ki-zax"/>
+                            <constraint firstAttribute="trailing" secondItem="39H-79-uKM" secondAttribute="trailing" id="yGt-yf-SHg"/>
+                            <constraint firstItem="8Th-W6-M4c" firstAttribute="leading" secondItem="GNR-Wm-gI8" secondAttribute="leading" constant="10" id="ygI-WZ-DiW"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="calendar" destination="0ss-kK-ppo" id="iDW-4u-gHM"/>
@@ -351,6 +370,9 @@
         <segue reference="4qz-Mk-09k"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
